@@ -1,0 +1,31 @@
+
+//  ████████╗██╗   ██╗██████╗  ██████╗
+//  ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔═══██╗
+//     ██║    ╚████╔╝ ██████╔╝██║   ██║
+//     ██║     ╚██╔╝  ██╔═══╝ ██║   ██║
+//     ██║      ██║   ██║     ╚██████╔╝
+//     ╚═╝      ╚═╝   ╚═╝      ╚═════╝
+//
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/ubuntu-regular.woff2') format('woff2'),
+       url('../fonts/ubuntu-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+$font: 'Ubuntu', sans-serif;
+
+// Typos
+$h1: 5rem;
+$h2: 3rem;
+$h3: 2rem;
+$p: 1.3rem;
+$small: 1rem;
+
+// Typo Bolds
+
+$regular: 400;
+$bold: 700;
+$black: 800;

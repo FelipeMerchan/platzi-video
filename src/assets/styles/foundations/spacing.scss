@@ -1,0 +1,62 @@
+@import '../tokens/spacing.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin constructor($num) {
+  padding: $num;
+  &_margin {
+    margin: $num;
+  }
+  &_top {
+    padding-block-start: $num;
+    &_margin {
+      margin-block-start: $num;
+    }
+  }
+  &_bottom {
+    padding-block-end: $num;
+    &_margin {
+      margin-block-end: $num;
+    }
+  }
+  &_left {
+    padding-inline-start: $num;
+    &_margin {
+      margin-inline-start: $num;
+    }
+  }
+  &_right {
+    padding-inline-end: $num;
+    &_margin {
+      margin-inline-end: $num;
+    }
+  }
+}
+
+.spaced {
+  padding: $space;
+}
+
+.space {
+  @include constructor($space);
+}
+
+.space_2 {
+  @include constructor($space * 2);
+}
+
+.space_3 {
+  @include constructor($space * 3);
+}
+
+.space_4 {
+  @include constructor($space * 4);
+}
+
+.space_5 {
+  @include constructor($space * 5);
+}
