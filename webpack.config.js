@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
@@ -22,7 +21,6 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@styles': path.resolve(__dirname, 'src/assets/styles/'),
-      '@images': path.resolve(__dirname, 'src/assets/static/'),
     }
   },
   mode: 'production',
@@ -50,7 +48,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.png/,
+        test: /\.png|svg|jpg$/,
         type: 'asset/resource'
       },
       {
@@ -78,7 +76,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/[name].[contenthash].css'
     }),
-    new Dotenv(),
     new CleanWebpackPlugin(),
   ],
   optimization: {

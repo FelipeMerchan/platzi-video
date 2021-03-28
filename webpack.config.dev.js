@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: {
@@ -20,7 +19,6 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@styles': path.resolve(__dirname, 'src/assets/styles/'),
-      '@images': path.resolve(__dirname, 'src/assets/static/'),
     }
   },
   module: {
@@ -47,7 +45,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.png/,
+        test: /\.png|svg|jpg$/,
         type: 'asset/resource'
       },
       {
@@ -75,7 +73,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/[name].[contenthash].css'
     }),
-    new Dotenv(),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

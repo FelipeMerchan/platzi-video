@@ -1,0 +1,56 @@
+@import '../tokens/colors.scss';
+@import '../tokens/spacing.scss';
+@import '../tokens/typo.scss';
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  block-size: 8rem;
+  padding: $space;
+
+  img {
+    inline-size: 20rem;
+  }
+
+  &__menu {
+    text-align: right;
+
+    &:hover ul { display: block; }
+
+    ul {
+      display: none;
+      padding: 0;
+      position: absolute;
+      margin: 0;
+      margin-left: $space-2;
+      list-style-type: none;
+
+      &:hover { display: block; }
+
+      li {
+        margin: $space 0;
+      }
+
+      a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
+      }
+    }
+  }
+
+  &__menu-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    inline-size: 12rem;
+
+    img {
+      inline-size: 2rem;
+      margin-inline-end: $space;
+    }
+  }
+}
