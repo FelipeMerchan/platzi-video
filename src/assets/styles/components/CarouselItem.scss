@@ -6,13 +6,16 @@
   inline-size: 20rem;
   border-radius: 20px;
   overflow: hidden;
-  margin-inline-end: $space;
   display: inline-block;
   cursor: pointer;
   transition-property: transform;
   transition-duration: .5s;
   will-change: transform;
   transform-origin: center left;
+
+  &:not(:last-child) {
+    margin-inline-end: $space-2;
+  }
 
   &__image {
     inline-size: 20rem;
