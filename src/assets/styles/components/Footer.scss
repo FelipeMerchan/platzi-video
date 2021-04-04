@@ -1,0 +1,29 @@
+@import '../tokens/spacing.scss';
+@import '../tokens/colors.scss';
+
+.Footer {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: $space-2;
+  background-color: $purple-color;
+  block-size: 10rem;
+
+  a {
+    margin-inline-end: $space-3;
+    color:$white;
+    text-decoration: none;
+    font-size: 1.4rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
