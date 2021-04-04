@@ -1,0 +1,61 @@
+@import '../tokens/spacing.scss';
+
+.Carousel-item {
+  position: relative;
+  block-size: 25rem;
+  inline-size: 20rem;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-inline-end: $space;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: transform;
+  transition-duration: .5s;
+  will-change: transform;
+  transform-origin: center left;
+
+  &__image {
+    inline-size: 20rem;
+    block-size: 25rem;
+    object-fit: cover;
+  }
+
+  &__details {
+    position:absolute;
+    bottom: 0;
+    top:    0;
+    left:   0;
+    right:  0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: $space;
+    padding-block-start: 17rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    font-size: 10px;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .5s;
+    will-change: opacity;
+
+    img {
+      inline-size: 2rem;
+      &:not(:last-child) {
+        margin-inline-end: $space;
+      }
+    }
+
+    p {
+      margin-block-start: $space;
+    }
+  }
+
+  &:hover .Carousel-item__details {
+    opacity: 1;
+  }
+
+  &:hover ~ .Carousel-item {
+    transform: translateX(10rem);
+  }
+}

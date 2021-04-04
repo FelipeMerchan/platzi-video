@@ -1,19 +1,28 @@
-import React from 'react'
+/* eslint-disable import/no-unresolved */
+import React from 'react';
 
-import { Header } from '@components/Header'
-import '@styles/pages/Home.scss'
+import Header from '@components/Header';
+import Search from '@components/Search';
+import Categories from '@components/Categories';
+import Carousel from '@components/Carousel';
+import CarouselItem from '@components/CarouselItem';
+import '@styles/pages/Home.scss';
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
-    <Header />
-      <main className="Home">
-        <div className="wrapper">
-          <div className="Home-content">
-
-          </div>
-        </div>
-      </main>
+      <Header />
+      <Search />
+      <Categories>
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
     </>
-  )
-}
+  );
+};
+
+export default Home;

@@ -1,15 +1,19 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { Home } from '@pages/Home'
-import '@styles/App.scss'
+// eslint-disable-next-line import/no-unresolved
+import Home from '@pages/Home';
+// eslint-disable-next-line import/no-unresolved
+import '@styles/App.scss';
 
-export const App = () => {
+const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path='/' component={Home} />
       </Switch>
     </BrowserRouter>
-  )
-}
+  );
+};
+
+export default App;

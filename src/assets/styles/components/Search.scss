@@ -1,0 +1,35 @@
+@import '../tokens/colors.scss';
+@import '../tokens/spacing.scss';
+@import '../tokens/typo.scss';
+
+.Search {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-block-start: $space-3;
+  margin-block-end: $space-5;
+  text-align: center;
+
+  &__title {
+    margin-block-end: $space-3;
+    font-size: $title;
+    inline-size: 100%;
+  }
+
+  &__input {
+    inline-size: 70%;
+    border: .2rem solid $white;
+    border-radius: 2.7rem;
+    font-family: inherit;
+    font-size: $p;
+    block-size: 5rem;
+    padding: 0 $space-3;
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: 0;
+    color: $white;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+}

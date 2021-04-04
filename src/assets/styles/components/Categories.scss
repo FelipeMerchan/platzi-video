@@ -1,0 +1,11 @@
+@import '../tokens/typo.scss';
+@import '../tokens/spacing.scss';
+
+.Categories {
+  &__title {
+    font-size: $p;
+    position: absolute;
+    padding-inline-start: $space-3;
+    inline-size: 100%;
+  }
+}

@@ -1,0 +1,23 @@
+@import '../tokens/spacing.scss';
+
+.Carousel {
+  inline-size: 100%;
+  overflow: scroll;
+  padding: $space;
+  position: relative;
+
+  &__container {
+    white-space: nowrap;
+    margin: 70px 0;
+    padding-block-end: $space;
+
+    &:hover .Carousel-item {
+      opacity: 0.3;
+    }
+
+    &:hover .Carousel-item:hover {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+  }
+}
