@@ -29,7 +29,7 @@ const Home = () => {
 
       <Categories title='Tendencias'>
         <Carousel>
-          {initialState.trends.map(item =>
+          {initialState.trends.map((item) =>
             // eslint-disable-next-line react/jsx-props-no-spreading
             <CarouselItem key={item.id} {...item} />
           )}
@@ -38,7 +38,7 @@ const Home = () => {
 
       <Categories title='Originals'>
         <Carousel>
-          {initialState.originals.map(item =>
+          {initialState.originals.map((item) =>
             // eslint-disable-next-line react/jsx-props-no-spreading
             <CarouselItem key={item.id} {...item} />
           )}
