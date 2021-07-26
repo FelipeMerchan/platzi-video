@@ -3,10 +3,10 @@ import React from 'react';
 
 import '@styles/components/Categories.scss';
 
-export const Categories = ({ children }) => {
+export const Categories = ({ children, title }) => {
   return (
     <div className='Categories'>
-      <h2 className='Categories__title'>Mi lista</h2>
+      <h2 className='Categories__title'>{title}</h2>
       {children}
     </div>
   );
