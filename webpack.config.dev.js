@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /\.html$/,
         use: [
-          {loader: 'html-loader'},
+          { loader: 'html-loader' },
         ],
       },
       {
@@ -55,10 +55,10 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            mimetype: "application/font-woff",
-            name: "[name].[contenthash].[ext]",
-            outputPath: "./assets/fonts/",
-            publicPath: "../assets/fonts/",
+            mimetype: 'application/font-woff',
+            name: '[name].[contenthash].[ext]',
+            outputPath: './assets/fonts/',
+            publicPath: '../assets/fonts/',
             esModule: false,
           },
         },

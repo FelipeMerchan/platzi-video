@@ -6,10 +6,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 30px;
-  background: linear-gradient(#21c08b, #ab88ff);
   flex-direction: column;
-  min-height: calc(100vh - 200px);
+  min-block-size: calc(100vh - 200px);
+  padding: $space-5 $space-3;
+  background: linear-gradient(#21c08b, #ab88ff);
 
   &__container {
     display: flex;
@@ -38,7 +38,8 @@
         border-bottom: 2px solid $white;
         height: 50px;
         padding-left: $space;
-        font-family: 'Muli', system-ui;
+        color: $white;
+        font-family: $font;
         margin-bottom: $space;
         outline: 0;
         font-size: 16px;

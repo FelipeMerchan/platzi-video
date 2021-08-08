@@ -1,0 +1,104 @@
+@import '../tokens/spacing.scss';
+@import '../tokens/colors.scss';
+@import '../tokens/typo.scss';
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  background: linear-gradient($green-color, #ab88ff);
+  flex-direction: column;
+  min-height: calc(100vh - 200px);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    inline-size: 100%;
+    max-inline-size: 40rem;
+    min-height: 50rem;
+    padding: 9.6rem 6.4rem;
+    border: 2px solid $white;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: $box-shadow;
+    border-radius: 40px;
+
+    h2 {
+      font-weight: normal;
+      font-size: $title;
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      margin-block-start: $space-4;
+      margin-block-end:   $space-4;
+
+      & .input {
+        background-color: transparent;
+        border-style: none;
+        border-bottom: 2px solid $white;
+        height: 50px;
+        padding-left: $space;
+        font-family: $font;
+        color: $white;
+        margin-bottom: $space;
+        outline: 0;
+        font-size: $p;
+
+        &::placeholder{
+          color: $white;
+        }
+      }
+
+      & .button {
+        background-color: rgba(255, 255, 255, 0.1);
+        margin: $space 0;
+        width: 100%;
+        color: $white;
+        border-radius: 50px;
+        border: none;
+        padding: $space;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Muli', system-ui;
+        letter-spacing: 1px;
+        outline: none;
+      }
+    }
+
+    a {
+      color: $white;
+      text-align: center;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  will-change: opacity, transform;
+}
+
+  @keyframes fadeInUp
+  {
+    0%
+    {
+      transform: translate3d(0, 100px,0);
+      opacity: 0;
+    }
+    100%
+    {
+      transform: translateY(0, 0, 0);
+      opacity: 1;
+    }
+  }
