@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/no-unresolved
 import '@styles/pages/Register.scss';
@@ -13,7 +14,9 @@ const Register = () => (
         <input className='input' type='password' placeholder='Contraseña' />
         <button className='button' type='button'>Registrarme</button>
       </form>
-      <a href='/'>Iniciar Sesión</a>
+      <Link to='/login'>
+        Iniciar Sesión
+      </Link>
     </div>
   </section>
 );
