@@ -1,0 +1,125 @@
+@import '../tokens/spacing.scss';
+@import '../tokens/colors.scss';
+@import '../tokens/typo.scss';
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-block-size: calc(100vh - 200px);
+  padding: $space-5 $space-3;
+  background: linear-gradient($green-color, $purple-color);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 400px;
+    border: 2px solid $white;
+    box-shadow: $box-shadow;
+    border-radius: 40px;
+    padding: 6em 4em;
+    min-height: 700px;
+
+    h2 {
+      font-weight: normal;
+      font-size: $title;
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+
+      & .input {
+        background-color: transparent;
+        border-style: none;
+        border-bottom: 2px solid $white;
+        height: 50px;
+        padding-left: $space;
+        color: $white;
+        font-family: $font;
+        margin-bottom: $space;
+        outline: 0;
+        font-size: 16px;
+      }
+
+      & .button {
+        background-color: rgba(255, 255, 255, 0.1);
+        margin: $space-2 0;
+        width: 100%;
+        color: $white;
+        border-radius: 50px;
+        border: none;
+        padding: $space-2;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: 'Muli', system-ui;
+        letter-spacing: 1px;
+      }
+
+      & .login__container--remember-me {
+        color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+          margin-inline-end: $space;
+        }
+
+        a {
+          color: $white;
+          font-size: 14px;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      label {
+        font-size: 14px;
+      }
+    }
+
+    &--social-media {
+      margin: $space-4 0;
+
+      & > a {
+        display: flex;
+        align-items: center;
+        color: $white;
+        text-decoration: none;
+        margin-bottom: $space;
+        font-size: 14px;
+
+        img {
+          margin-right: $space;
+          width: 30px;
+        }
+      }
+    }
+
+    &--register {
+      font-size: 14px;
+
+      a {
+        font-size: $p;
+        font-weight: bold;
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+::placeholder{
+  color: $white;
+}

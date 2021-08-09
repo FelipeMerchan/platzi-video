@@ -1,6 +1,6 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -9,7 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[contenthash].js',
-    assetModuleFilename: 'assets/static/[hash][ext][query]'
+    publicPath: '/',
+    assetModuleFilename: 'assets/static/[hash][ext][query]',
   },
   mode: 'development',
   devtool: 'source-map',
@@ -19,7 +20,8 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@pages': path.resolve(__dirname, 'src/pages/'),
       '@styles': path.resolve(__dirname, 'src/assets/styles/'),
-    }
+      '@assets': path.resolve(__dirname, 'src/assets/static/'),
+    },
   },
   module: {
     rules: [
@@ -27,26 +29,26 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
         use: [
-          {loader: 'html-loader'}
-        ]
+          { loader: 'html-loader' },
+        ],
       },
       {
         test: /\.s[ac]ss$/,
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.png|svg|jpg$/,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2)$/,
@@ -54,24 +56,24 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            mimetype: "application/font-woff",
-            name: "[name].[contenthash].[ext]",
-            outputPath: "./assets/fonts/",
-            publicPath: "../assets/fonts/",
+            mimetype: 'application/font-woff',
+            name: '[name].[contenthash].[ext]',
+            outputPath: './assets/fonts/',
+            publicPath: '../assets/fonts/',
             esModule: false,
-          }
-        }
-      }
-    ]
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, 'public/index.html'),
-      filename: './index.html'
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/[name].[contenthash].css'
+      filename: 'assets/[name].[contenthash].css',
     }),
   ],
   devServer: {
@@ -80,5 +82,5 @@ module.exports = {
     historyApiFallback: true,
     port: 3001,
     open: true,
-  }
-}
+  },
+};

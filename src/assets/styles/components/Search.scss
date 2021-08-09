@@ -7,6 +7,7 @@
   justify-content: center;
   flex-wrap: wrap;
   padding-block-start: $space-3;
+  margin: 0 auto;
   margin-block-end: $space-5;
   text-align: center;
 
@@ -32,4 +33,8 @@
       color: $white;
     }
   }
+}
+
+.Search.isHome {
+  inline-size: 70%;
 }
