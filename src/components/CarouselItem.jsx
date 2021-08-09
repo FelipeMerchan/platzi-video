@@ -1,19 +1,50 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { setFavorite } from '../actions';
 
 import playIcon from '../assets/static/images/icons/play.png';
 import plusIcon from '../assets/static/images/icons/mas.png';
 import '@styles/components/CarouselItem.scss';
 
-const CarouselItem = ({ cover, title, year, contentRating, duration }) => {
+const CarouselItem = (props) => {
+  const { cover, title, year, contentRating, duration } = props;
+
+  const handleSetFavorite = () => {
+    props.setFavorite({
+      cover,
+      title,
+      year,
+      contentRating,
+      duration,
+    });
+  };
+
   return (
     <div className='Carousel-item'>
       <img className='Carousel-item__image' src={cover} alt={title} />
       <div className='Carousel-item__details'>
         <div>
-          <img src={playIcon} alt='Play' />
-          <img src={plusIcon} alt='Más' />
+          <button
+            type='button'
+            aria-label='Reproducir'
+          >
+            <img
+              src={playIcon}
+              alt='Play'
+            />
+          </button>
+          <button
+            type='button'
+            aria-label='Agregar'
+            onClick={handleSetFavorite}
+          >
+            <img
+              src={plusIcon}
+              alt='Más'
+            />
+          </button>
         </div>
         <p className='Carousel-item__details--title'>{title}</p>
         <p className='Carousel-item__details--subtitle'>
@@ -32,4 +63,8 @@ CarouselItem.propTypes = {
   duration: PropTypes.number,
 };
 
-export default CarouselItem;
+const mapDispatchToProps = {
+  setFavorite,
+};
+
+export default connect(null, mapDispatchToProps)(CarouselItem);

@@ -42,11 +42,16 @@
     transition-duration: .5s;
     will-change: opacity;
 
-    img {
-      inline-size: 2rem;
+    button {
+      border: none;
+      background-color: transparent;
       &:not(:last-child) {
         margin-inline-end: $space;
       }
+    }
+
+    img {
+      inline-size: 2rem;
     }
 
     p {
