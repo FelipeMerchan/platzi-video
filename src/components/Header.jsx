@@ -1,12 +1,18 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import gravatar from '../utils/gravatar';
 
 import platziVideoLogo from '../assets/static/images/logo-platzi-video-BW2.png';
-import iconUser from '../assets/static/images/icons/user.svg';
+import userIcon from '../assets/static/images/icons/user.svg';
 // eslint-disable-next-line import/no-unresolved
 import '@styles/components/Header.scss';
 
-const Header = () => {
+const Header = (props) => {
+  const { user } = props;
+  const hasUser = Object.keys(user).length > 0;
+
   return (
     <header className='Header'>
       <Link to='/'>
@@ -14,7 +20,17 @@ const Header = () => {
       </Link>
       <div className='Header__menu'>
         <div className='Header__menu-profile'>
-          <img width='20' src={iconUser} alt='Usuario' />
+          {hasUser ?
+            <img
+              width='20'
+              src={gravatar(user.email)}
+              alt={user.email}
+            /> :
+            <img
+              width='20'
+              src={userIcon}
+              alt='Usuario'
+            />}
           <span>Mi perfil</span>
         </div>
         <ul>
@@ -32,4 +48,10 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps, null)(Header);
