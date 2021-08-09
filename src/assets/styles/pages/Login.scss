@@ -9,7 +9,7 @@
   flex-direction: column;
   min-block-size: calc(100vh - 200px);
   padding: $space-5 $space-3;
-  background: linear-gradient(#21c08b, #ab88ff);
+  background: linear-gradient($green-color, #ab88ff);
 
   &__container {
     display: flex;
