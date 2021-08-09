@@ -42,9 +42,19 @@
     transition-duration: .5s;
     will-change: opacity;
 
+    & > div {
+      display: flex;
+    }
+
     button {
       border: none;
       background-color: transparent;
+      &:not(:last-child) {
+        margin-inline-end: $space;
+      }
+    }
+
+    a {
       &:not(:last-child) {
         margin-inline-end: $space;
       }

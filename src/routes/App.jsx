@@ -6,6 +6,7 @@ import Home from '@pages/Home';
 import Login from '@pages/Login';
 import Register from '@pages/Register';
 import NotFound from '@pages/NotFound';
+import Player from '@pages/Player';
 import Layout from '@components/Layout';
 import '@styles/App.scss';
 
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
+          <Route exact path='/player/:id' component={Player} />
           <Route component={NotFound} />
         </Switch>
       </Layout>

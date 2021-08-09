@@ -3,6 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { setFavorite, deleteFavorite } from '../actions';
 
 import playIcon from '../assets/static/images/icons/play.png';
@@ -33,15 +34,15 @@ const CarouselItem = (props) => {
       <img className='Carousel-item__image' src={cover} alt={title} />
       <div className='Carousel-item__details'>
         <div>
-          <button
-            type='button'
+          <Link
+            to={`/player/${id}`}
             aria-label='Reproducir'
           >
             <img
               src={playIcon}
               alt='Play'
             />
-          </button>
+          </Link>
           {isList ?
             <button
               type='button'
