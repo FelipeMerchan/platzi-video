@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { connect } from 'react-redux';
@@ -15,7 +17,12 @@ const Home = ({ myList, trends, originals }) => {
       {myList.length > 0 && (
         <Categories title='Mi lista'>
           <Carousel>
-            <CarouselItem />
+            {myList.map((item) =>
+              <CarouselItem
+                key={item.id}
+                {...item}
+                isList
+              />)}
           </Carousel>
         </Categories>
       )}
@@ -23,7 +30,6 @@ const Home = ({ myList, trends, originals }) => {
       <Categories title='Tendencias'>
         <Carousel>
           {trends.map((item) =>
-            // eslint-disable-next-line react/jsx-props-no-spreading
             <CarouselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
@@ -31,7 +37,6 @@ const Home = ({ myList, trends, originals }) => {
       <Categories title='Originals'>
         <Carousel>
           {originals.map((item) =>
-            // eslint-disable-next-line react/jsx-props-no-spreading
             <CarouselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
