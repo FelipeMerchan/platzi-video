@@ -41,7 +41,7 @@ const Header = (props) => {
         <ul>
           {hasUser ?
             <li>
-              <a href='/'>{user.email}</a>
+              <a href='/'>{user.name}</a>
             </li> :
             null}
           {hasUser ?

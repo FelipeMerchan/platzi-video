@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { registerRequest } from '../actions';
 
 // eslint-disable-next-line import/no-unresolved
 import '@styles/pages/Register.scss';
 
-const Register = () => {
+const Register = (props) => {
   const [form, setValues] = useState({
     email: '',
     name: '',
@@ -20,7 +22,8 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    props.registerRequest(form);
+    props.history.push('/');
   };
 
   return (
@@ -60,6 +63,10 @@ const Register = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Register;
+const mapDispatchToProps = {
+  registerRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Register);
