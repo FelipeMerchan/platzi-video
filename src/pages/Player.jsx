@@ -1,16 +1,19 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 
-import '@styles/components/Player.scss';
+import '@styles/pages/Player.scss';
 
-const Player = () => {
+const Player = (props) => {
+  const { id } = props.match.params;
+
   return (
     <div className='Player'>
-      <video constrols autoPlay>
+      <video controls autoPlay>
         <source src='' type='video/mp4' />
       </video>
-      <div className='Player__back'>
-        <button type='button'>
+      <div className='Player-back'>
+        <button type='button' onClick={() => props.history.goBack()}>
           Regresar
         </button>
       </div>
