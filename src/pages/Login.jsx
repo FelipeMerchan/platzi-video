@@ -1,12 +1,14 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginRequest } from '../actions';
 
 import '@styles/pages/Login.scss';
 import googleIcon from '../assets/static/images/google.svg';
 import twitterIcon from '../assets/static/images/twitter.svg';
 
-const Login = () => {
+const Login = (props) => {
   const [form, setValues] = useState({
     email: '',
   });
@@ -20,7 +22,8 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    props.loginRequest(form);
+    props.history.push('/');
   };
 
   return (
@@ -78,4 +81,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Login);
